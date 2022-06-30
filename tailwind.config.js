@@ -4,6 +4,13 @@ module.exports = {
     './src/**/*.tsx'
   ],
   theme: {
+    screens: {
+      'limite': '832px',
+      'iphone11': '375px',
+      'footer': '467px',
+      'login1115': '1115px',
+      'video': '1200px'
+    },
     extend: {
       fontFamily: {
         sans: 'Roboto, sans-serif',
@@ -38,5 +45,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animation-delay")
+  ],
 }
