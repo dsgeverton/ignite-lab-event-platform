@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Logo } from "../components/Logo";
 import classNames from 'classnames';
+import { CodeMockupImage } from "../components/CodeMockupImage";
 
 const CREATE_SUBSCRIBER_MUTATION = gql`
     mutation createSubscriberMutation($name: String!, $email: String!) {
@@ -107,7 +108,7 @@ export function Subscribe() {
 
             </div>
             
-            <img src="/src/assets/code-mockup.png" alt="" className="mt-10" />
+            <CodeMockupImage />
             <Footer />
         </div>
     )
