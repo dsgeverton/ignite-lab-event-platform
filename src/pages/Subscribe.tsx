@@ -3,8 +3,9 @@ import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Logo } from "../components/Logo";
+
 import classNames from 'classnames';
-import { CodeMockupImage } from "../components/CodeMockupImage";
+import codeMockupImage  from "/src/assets/code-mockup.png";
 
 const CREATE_SUBSCRIBER_MUTATION = gql`
     mutation createSubscriberMutation($name: String!, $email: String!) {
@@ -27,7 +28,6 @@ export function Subscribe() {
     async function handleSubmit(event: FormEvent) {
         event.preventDefault()
 
-
         if (!name) setInputNameAlert(true)
         if (!email) setInputEmailAlert(true)
 
@@ -43,7 +43,6 @@ export function Subscribe() {
             }
         })
         navigate('/event')
-
     }
 
     return (
@@ -105,10 +104,9 @@ export function Subscribe() {
                         }
                     </form>
                 </div>
-
             </div>
             
-            <CodeMockupImage />
+            <img src={codeMockupImage} alt="" className="mt-10" />
             <Footer />
         </div>
     )

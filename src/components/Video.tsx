@@ -127,7 +127,6 @@ export function Video(props: VideoProps) {
                             <CaretRight size={24}/>
                         </div>
                     </a>
-        
                 </div>
             </div>
         </div>

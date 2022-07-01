@@ -34,21 +34,6 @@ export function Sidebar(props: SidebarActive) {
     const [sidebarActive, setSidebarActive] = useState(false)
     const {data} = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY);
 
-    function handleMenu() {
-        const bar1 = document.querySelector('#bar-1')
-        const bar2 = document.querySelector('#bar-2')
-        const bar3 = document.querySelector('#bar-3')
-        bar1?.classList.toggle('top-[12px]')
-        bar1?.classList.toggle('rotate-45')
-        bar1?.classList.toggle('absolute')
-        bar2?.classList.toggle('top-[4px]')
-        bar2?.classList.toggle('rotate-[-45deg]')
-        bar2?.classList.toggle('absolute')
-        bar3?.classList.toggle('opacity-100')
-        bar3?.classList.toggle('opacity-0')
-        setSidebarActive(!sidebarActive)
-    }
-
     document.body.onresize = function() {
         if (document.body.clientWidth < 832) {
             setSidebarActive(!sidebarActive)
@@ -60,7 +45,6 @@ export function Sidebar(props: SidebarActive) {
         <aside className={classNames(`w-[348px] absolute limite:static limite:block bg-gray-700 p-6 border-l border-gray-600`, {
             'hidden': !props.sidebarActive,
             'block': props.sidebarActive,
-            // 'absolute': props.sidebarActive,
             'z-10': props.sidebarActive,
             'right-0': props.sidebarActive
         })}>
@@ -80,9 +64,9 @@ export function Sidebar(props: SidebarActive) {
                             title={lesson.title}
                             slug={lesson.slug}
                             />
-                            )
-                        }
-                        )}
+                        )
+                    }
+                )}
             </div>
         </aside>
     )

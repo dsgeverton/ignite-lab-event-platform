@@ -46,16 +46,14 @@ export function Event() {
 
     return (
         <div className="flex flex-col min-h-screen">
-        <Header activeSidebar={handleUpdatesidebar} />
-        <main className="flex flex-1">
-            <div className="flex flex-1 flex-col">
-                {slug ? <Video lessonSlug={slug} /> : <h1>teste</h1>}
-                <Footer />
-            </div>
-        
-        
-        <Sidebar sidebarActive={sidebarActive}/>
-        </main>
+            <Header activeSidebar={handleUpdatesidebar} />
+            <main className="flex flex-1">
+                <div className="flex flex-1 flex-col">
+                    {slug ? <Video lessonSlug={slug} /> : <h1>teste</h1>}
+                    <Footer />
+                </div>
+                <Sidebar sidebarActive={sidebarActive}/>
+            </main>
         </div>
     )
 }
